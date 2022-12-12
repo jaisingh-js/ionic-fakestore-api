@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IProduct } from '../interfaces/product';
+import apiData from '/home/cybertron/Projects/ionic/ionic-fakestore-api/src/data'
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  products?: IProduct[];
 
-  constructor() {}
+  constructor() { }
+  
+  ngOnInit() {
+    this.products = apiData;
+  }
 
 }

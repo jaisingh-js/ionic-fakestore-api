@@ -1,0 +1,24 @@
+<ion-card class="ion-padding" [routerLink]="['/home/product-detail', index]">
+  <div class="flex-image">
+    <img style="width: 50%" [src]="product.image" [alt]="product.title" />
+  </div>
+  <ion-card-header>
+    <ion-card-title>{{ product.title }}</ion-card-title>
+    <ion-card-subtitle>
+      <strong>
+        {{ product.rating.rate }} <ion-icon name="star"></ion-icon> ({{
+          product.rating.count
+        }})
+      </strong>
+    </ion-card-subtitle>
+    <ion-card-subtitle
+      ><strong> price: ${{ product.price }} </strong>
+    </ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button (click)="addToCart(product)">
+      Add to Cart
+    </ion-button></ion-card-content
+  >
+</ion-card>
