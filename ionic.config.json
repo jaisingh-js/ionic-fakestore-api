@@ -1,0 +1,7 @@
+{
+  "name": "ionic-fakestore-api",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
