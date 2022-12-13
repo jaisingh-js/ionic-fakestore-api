@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-button routerLink="/home"> Back </ion-button>
+  <ion-button routerLink="/"> Back </ion-button>
 
   <ion-card>
     <div class="flex-image">
@@ -23,7 +23,9 @@
       <strong>Description:</strong>
       {{ product.description }}
 
-      <ion-button expand="full">Add to Cart</ion-button>
+      <ion-button expand="full" (click)="addItemToCart(product)"
+        >Add to Cart</ion-button
+      >
     </ion-card-content>
   </ion-card>
 </ion-content>

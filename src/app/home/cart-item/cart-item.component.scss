@@ -1,0 +1,13 @@
+.cart-image {
+    object-fit: contain;
+    height: 100px;
+    min-width: 80px;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}

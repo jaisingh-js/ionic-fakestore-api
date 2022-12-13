@@ -1,7 +1,12 @@
 <ion-content>
-  <app-product
-    *ngFor="let product of products; let i=index;"
-    [product]="product"
-    [index]="i"
-  ></app-product>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size-lg="3"
+        size-sm="4"
+        *ngFor="let product of products; let i=index;"
+        ><app-product [product]="product" [index]="i"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

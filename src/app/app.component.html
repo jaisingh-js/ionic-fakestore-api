@@ -1,8 +1,19 @@
 <ion-app>
   <ion-header [translucent]="true">
-    <ion-toolbar color="primary">
-      <ion-title><strong>FakeStore</strong></ion-title>
-    </ion-toolbar>
+    <!-- <ion-toolbar color="primary">
+      <ion-title routerLink="/"><strong>FakeStore</strong></ion-title>
+      <ion-header></ion-header>
+      <ion-button routerLink="cart">Cart</ion-button>
+    </ion-toolbar> -->
+
+    <ion-segment mode="ios" [value]="value" (ionChange)="changeTab($event)">
+      <ion-segment-button value="products">
+        <ion-label>Products</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="cart">
+        <ion-label>Cart</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-header>
   <ion-content>
     <ion-router-outlet></ion-router-outlet>
