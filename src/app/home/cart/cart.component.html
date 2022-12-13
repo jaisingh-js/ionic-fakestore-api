@@ -1,14 +1,18 @@
 <ion-content>
   <ion-list>
-    <app-cart-item *ngFor="let item of cartItems" [item]="item"></app-cart-item>
+    <app-cart-item
+      (refreshPage)="refreshCart()"
+      *ngFor="let item of cartItems"
+      [item]="item"
+    ></app-cart-item>
   </ion-list>
   <ion-item>
-    <ion-label> Quantity: </ion-label>
+    <ion-label>Total Quantity: </ion-label>
     {{ quantity }}
   </ion-item>
 
   <ion-item>
-    <ion-label> Price: </ion-label>
-    {{ total | number }}
+    <ion-label>Total Price: </ion-label>
+    ${{ total | number }}
   </ion-item>
 </ion-content>

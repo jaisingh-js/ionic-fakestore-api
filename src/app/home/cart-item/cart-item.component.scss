@@ -10,4 +10,16 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.cart-item-first {
+    display: flex;
+    gap: 10px;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

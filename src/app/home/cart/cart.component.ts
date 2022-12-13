@@ -21,4 +21,11 @@ export class CartComponent implements OnInit {
     this.total = data.total;
   }
 
+  refreshCart() {
+    const data = this.cartService.getCart();
+    this.cartItems = data.cartItems;
+    this.quantity = data.quantity;
+    this.total = data.total;
+  }
+
 }

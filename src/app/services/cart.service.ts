@@ -19,7 +19,6 @@ export class CartService {
         cartItem.quantity += 1;
         this.quanity += 1;
         this.total += item.price;
-        console.log(this.cartItems)
         return;
       }
     }
@@ -31,7 +30,6 @@ export class CartService {
     this.cartItems.push(cItem);
     this.quanity += 1;
     this.total += item.price;
-    console.log(this.cartItems);
 
   }
   
@@ -40,6 +38,14 @@ export class CartService {
       cartItems: this.cartItems,
       quantity: this.quanity,
       total: this.total
+    }
+  }
+
+  removeFromCart(item: ICartProduct) {
+    if (this.cartItems.includes(item)) {
+      this.cartItems.splice(this.cartItems.indexOf(item), 1);
+      this.quanity -= item.quantity;
+      this.total -= item.quantity * item.product.price;
     }
   }
 }

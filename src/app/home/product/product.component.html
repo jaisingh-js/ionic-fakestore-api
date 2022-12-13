@@ -1,5 +1,5 @@
-<ion-card class="product-card">
-  <div (click)="openItemDetail(index)">
+<ion-card mode="ios" class="product-card">
+  <div (click)="openItemDetail(index)" class="product-header">
     <img [src]="product.image" [alt]="product.title" />
     <ion-card-header>
       <ion-card-title>{{ product.title }}</ion-card-title>
@@ -17,7 +17,7 @@
   </div>
 
   <ion-card-content>
-    <ion-button (click)="addToCart(product)" expand="full">
+    <ion-button mode="ios" (click)="addToCart(product)" expand="full">
       Add to Cart
     </ion-button></ion-card-content
   >

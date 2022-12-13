@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { IProduct } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
 import data from 'src/data';
@@ -12,7 +13,7 @@ import data from 'src/data';
 export class ProductDetailComponent implements OnInit {
   product!: IProduct;
 
-  constructor(private route: ActivatedRoute, private cartService: CartService) { }
+  constructor(private route: ActivatedRoute, private cartService: CartService, private alertController: AlertController) { }
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -21,7 +22,16 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  addItemToCart(product: IProduct) {
+  async addItemToCart(product: IProduct) {
+    const alert = await this.alertController.create({
+      header: 'Success',
+      subHeader: 'Item added',
+      message: product.title + ' added to cart',
+      buttons: ['ok']
+    });
+
+    await alert.present();
+    
     this.cartService.addItemToCart(product);
   }
 
